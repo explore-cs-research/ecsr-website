@@ -99,7 +99,7 @@ To set up GitHub Pages for the first time:
 3. Set the branch to `main` and folder to `/ (root)`
 4. Save
 
-The site will then be live at `https://explore-cs-research.github.io/`.
+The site will then be live at [https://explore-cs-research.github.io/](https://explore-cs-research.github.io/).
 
 
 ## Search engine indexing
