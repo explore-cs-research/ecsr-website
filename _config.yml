@@ -1,0 +1,7 @@
+title: Explore CS Research (ECSR)
+description: Exposing undergraduate students to computer science research at the University of Michigan
+baseurl: ""
+url: ""
+
+markdown: kramdown
+permalink: pretty

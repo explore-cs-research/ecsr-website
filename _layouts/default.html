@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="{{ '/' | relative_url }}" class="site-title">
+        <img src="{{ '/assets/images/ecsr-logo.png' | relative_url }}" alt="{{ site.title }}" class="site-logo">
+      </a>
+      <nav>
+        {% for item in site.data.nav %}
+          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>Explore CS Research (ECSR) &mdash; University of Michigan</p>
+  </footer>
+</body>
+</html>
