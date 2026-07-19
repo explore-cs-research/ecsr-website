@@ -86,20 +86,22 @@ bundle install        # Install dependencies (first time only)
 bundle exec jekyll serve --livereload   # Start local server
 ```
 
-The site will be available at `http://localhost:4000/`.
+The site will be available at `http://localhost:4000/ecsr-website/`.
 
 ## Deploying
 
 The site deploys automatically via GitHub Pages when you push to `main`.
 
-To set up GitHub Pages for the first time:
 
-1. Go to the repo **Settings > Pages**
-2. Under "Source", select **Deploy from a branch**
-3. Set the branch to `main` and folder to `/ (root)`
-4. Save
+Until a custom domain is set up, the site will be at: [https://explore-cs-research.github.io/ecsr-website/](https://explore-cs-research.github.io/ecsr-website/).
 
-The site will then be live at [https://explore-cs-research.github.io/](https://explore-cs-research.github.io/).
+### Adding a custom domain
+
+When you're ready to use a custom domain (e.g. `ecsr.engin.umich.edu`):
+
+1. Set up a CNAME record with your DNS provider pointing to `explore-cs-research.github.io`
+2. In the repo **Settings > Pages**, enter your custom domain and save
+3. Change `baseurl` in `_config.yml` from `"/ecsr-website"` to `""`
 
 
 ## Search engine indexing

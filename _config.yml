@@ -1,6 +1,6 @@
 title: Explore CS Research (ECSR)
 description: Exposing undergraduate students to computer science research at the University of Michigan
-baseurl: ""
+baseurl: "/ecsr-website"
 url: ""
 
 markdown: kramdown
