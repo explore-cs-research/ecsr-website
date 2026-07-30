@@ -1,8 +1,10 @@
 - title: Home
   url: /
-- title: Current Students
-  url: /current-students/
 - title: Prospective Students
   url: /prospective-students/
+- title: Current Students
+  url: /current-students/
+- title: Mentors
+  url: /mentors/
 - title: Contact
   url: /contact/
