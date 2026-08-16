@@ -1,0 +1,41 @@
+# News & media — the single source for both the homepage carousel and /news/.
+# Keep the list newest-first. New items automatically appear in both places.
+#
+#   date      display label ("August 2026", "2024", …)
+#   datetime  machine-readable date: a year, YYYY-MM, or a full date
+#   title     headline text
+#   url       full https:// link for external coverage, or a site path like
+#             /prospective-students/ for an internal page
+#   source    publication or short attribution (optional)
+#   summary   one or two sentences (optional)
+
+- date: August 2026
+  datetime: 2026-08
+  title: Applications for the 2026–27 cohort open in mid-August
+  url: /prospective-students/
+  summary: The form is sent by email. Applications received by <strong>September 10, 2026</strong> receive higher priority.
+
+- date: April 2026
+  datetime: 2026-04
+  title: Explore CS Research students showcase year of discovery
+  url: https://cse.engin.umich.edu/stories/explore-cs-research-students-showcase-year-of-discovery
+  source: Michigan CSE
+
+- date: 2024
+  datetime: 2024
+  title: Explore CS Research program highlights student research in annual showcase
+  url: https://cse.engin.umich.edu/stories/explore-cs-research-program-highlights-student-research-in-annual-showcase
+  source: Michigan CSE
+
+- date: 2023
+  datetime: 2023
+  title: "Explore CS Research: year-long effort concludes with poster session"
+  url: https://cse.engin.umich.edu/stories/explore-cs-research-year-long-effort-concludes-with-poster-session
+  source: Michigan CSE
+
+- date: August 2021
+  datetime: 2021-08
+  title: Explore Computer Science Research (ExploreCSR) program
+  url: https://ai.engin.umich.edu/2021/08/24/explore-computer-science-research-explorecsr-program/
+  source: Michigan AI
+  summary: a participant's personal account of the program.

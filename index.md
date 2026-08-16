@@ -10,6 +10,31 @@ layout_style: landing
      section "Replacing placeholders" for how to swap each one in.
      =========================================================================== -->
 
+<!-- LATEST NEWS BAR — a thin ticker under the nav. One item at a time, drawn from
+     _data/news.yml; the full list lives at /news/. Add news there, not here. -->
+<div class="news-bar" data-carousel aria-roledescription="carousel" aria-label="Latest news">
+  <div class="wrap news-bar-inner">
+    <span class="news-bar-label">Latest</span>
+
+    <ul class="carousel-track" data-carousel-track>
+      {% for item in site.data.news limit: 5 %}
+      <li class="carousel-slide" data-carousel-slide>
+        <a href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}">
+          <time datetime="{{ item.datetime }}">{{ item.date }}</time>
+          <span class="news-bar-title">{{ item.title }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <div class="news-bar-controls">
+      <button class="carousel-btn carousel-btn--prev" type="button" data-carousel-prev aria-label="Previous news item"></button>
+      <button class="carousel-btn carousel-btn--next" type="button" data-carousel-next aria-label="Next news item"></button>
+      <a class="news-bar-all" href="{{ '/news/' | relative_url }}">All news</a>
+    </div>
+  </div>
+</div>
+
 <section class="hero hero--center">
   <div class="hero-inner">
     <div class="hero-content">
@@ -20,7 +45,7 @@ layout_style: landing
         for a year-long, hands-on research project &mdash; no prior experience required.
       </p>
       <div class="hero-actions">
-        <a href="{{ '/prospective-students/' | relative_url }}" class="btn btn--primary">I'm a student</a>
+        <a href="{{ '/prospective-students/' | relative_url }}" class="btn btn--primary">I want to be a mentee</a>
         <a href="{{ '/mentors/' | relative_url }}" class="btn btn--ghost">I want to mentor</a>
       </div>
     </div>
@@ -39,61 +64,49 @@ layout_style: landing
 
     <div class="gallery">
       <figure class="gallery-item gallery-item--wide">
-        <div class="ph ph--photo">Photo placeholder</div>
-        <figcaption>Annual poster session &mdash; add a caption</figcaption>
+        <img src="{{ '/assets/images/poster-session.jpg' | relative_url }}" alt="Students and mentors at the annual ECSR poster session" loading="lazy">
+        <figcaption>Annual poster session</figcaption>
       </figure>
       <figure class="gallery-item">
-        <div class="ph ph--photo">Photo placeholder</div>
+        <img src="{{ '/assets/images/student-presenting.jpg' | relative_url }}" alt="A student discussing their poster with a visitor at the showcase" loading="lazy">
         <figcaption>Student presenting their project</figcaption>
       </figure>
       <figure class="gallery-item">
-        <div class="ph ph--photo">Photo placeholder</div>
+        <img src="{{ '/assets/images/research-panel.jpg' | relative_url }}" alt="Students seated in a classroom during a research career panel" loading="lazy">
         <figcaption>Research career panel</figcaption>
       </figure>
       <figure class="gallery-item">
-        <div class="ph ph--photo">Photo placeholder</div>
-        <figcaption>Mentor and mentee coffee chat</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <div class="ph ph--photo">Photo placeholder</div>
-        <figcaption>Networking event</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <div class="ph ph--photo">Photo placeholder</div>
-        <figcaption>The cohort</figcaption>
+        <img src="{{ '/assets/images/first-gathering.jpg' | relative_url }}" alt="Students gathered around tables at the program's first meeting of the year" loading="lazy">
+        <figcaption>The first gathering</figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<!-- BY THE NUMBERS — every value below is a placeholder. Replace the digits. -->
-<section class="section section--tint">
+<!-- QUOTES — the two student quotes are real. The two mentor quotes are placeholders. -->
+<section class="section section--blue">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Impact</p>
-      <h2>By the numbers</h2>
-      <p>A snapshot of the program so far.</p>
+    <div class="section-head section-head--center">
+      <p class="eyebrow">In their words</p>
+      <h2>From students and mentors</h2>
     </div>
 
-    <dl class="facts">
-      <div class="fact">
-        <dt>Students mentored</dt>
-        <dd><span class="ph-value">00</span><small>since the program began</small></dd>
-      </div>
-      <div class="fact">
-        <dt>Research mentors</dt>
-        <dd><span class="ph-value">00</span><small>faculty, PhD students, and research staff</small></dd>
-      </div>
-      <div class="fact">
-        <dt>Projects completed</dt>
-        <dd><span class="ph-value">00</span><small>presented at the annual poster session</small></dd>
-      </div>
-      <div class="fact">
-        <dt>Went on to research</dt>
-        <dd><span class="ph-value">00%</span><small>continued in a research role or grad program</small></dd>
-      </div>
-    </dl>
-    <p class="ph-note">All four figures are placeholders &mdash; replace them in <code>index.md</code>.</p>
+    <div class="quotes">
+      <blockquote class="quote">
+        <p>The program offered a very structured start that helped introduce students to hands-on learning.</p>
+        <footer>ECSR student <span>2025 cohort</span></footer>
+      </blockquote>
+
+      <blockquote class="quote">
+        <p>ECSR serves as a low-pressure way to explore research and figure out whether it is something you enjoy &hellip; you can learn, ask questions, and develop new skills without feeling like you have to know everything from the start.</p>
+        <footer>ECSR student <span>2025 cohort</span></footer>
+      </blockquote>
+
+      <blockquote class="quote">
+        <p>(The program is valuable in that it) connect promising young students who are unfamiliar with research or with the topics studied in specific labs to research groups working on interesting projects</p>
+        <footer>ECSR mentor</footer>
+      </blockquote>
+    </div>
   </div>
 </section>
 
@@ -135,7 +148,7 @@ layout_style: landing
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Alumni</p>
-      <h2>Where our students are now</h2>
+      <h2>Next steps of ECSR cohorts</h2>
       <p>Past participants have gone on to graduate programs across the country.</p>
     </div>
 
@@ -160,86 +173,42 @@ layout_style: landing
         <span class="alumni-name">Alexia Moreno</span>
         <span class="alumni-role">MS student, University of Michigan</span>
       </li>
+      <li>
+        <span class="alumni-name">Xinyi Zhu</span>
+        <span class="alumni-role">MS student, University of Michigan</span>
+      </li>
+      <li>
+        <span class="alumni-name">And more!</span>
+      </li>
     </ul>
   </div>
 </section>
 
-<!-- QUOTES — the two student quotes are real. The two mentor quotes are placeholders. -->
-<section class="section section--blue">
-  <div class="wrap">
-    <div class="section-head section-head--center">
-      <p class="eyebrow">In their words</p>
-      <h2>From students and mentors</h2>
-    </div>
 
-    <div class="quotes">
-      <blockquote class="quote">
-        <p>The program offered a very structured start that helped introduce students to hands-on learning.</p>
-        <footer>ECSR student <span>2025 cohort</span></footer>
-      </blockquote>
 
-      <blockquote class="quote">
-        <p>ECSR serves as a low-pressure way to explore research and figure out whether it is something you enjoy &hellip; you can learn, ask questions, and develop new skills without feeling like you have to know everything from the start.</p>
-        <footer>ECSR student <span>2025 cohort</span></footer>
-      </blockquote>
-
-      <blockquote class="quote is-placeholder">
-        <p>Add a quote from a faculty or PhD mentor about what they got out of mentoring an ECSR student.</p>
-        <footer>Mentor name <span>Title, CSE</span></footer>
-      </blockquote>
-
-      <blockquote class="quote is-placeholder">
-        <p>Add a second mentor quote &mdash; ideally one that speaks to how manageable the time commitment is.</p>
-        <footer>Mentor name <span>Title, CSE</span></footer>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<section class="section section--surface">
+<!-- BY THE NUMBERS — every value below is a placeholder. Replace the digits. -->
+<section class="section section--tint">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Latest</p>
-      <h2>News &amp; media</h2>
+      <p class="eyebrow">Impact</p>
+      <h2>By the numbers</h2>
+      <p>A snapshot of the program so far.</p>
     </div>
 
-    <ul class="news">
-      <li>
-        <time datetime="2026-08">August 2026</time>
-        <div>
-          <a href="{{ '/prospective-students/' | relative_url }}">Applications for the 2026&ndash;27 cohort open in mid-August</a>
-          <p>The form is sent by email. Applications received by <strong>September 10, 2026</strong> receive higher priority.</p>
-        </div>
-      </li>
-      <li>
-        <time datetime="2026-04">April 2026</time>
-        <div>
-          <a href="https://cse.engin.umich.edu/stories/explore-cs-research-students-showcase-year-of-discovery">Explore CS Research students showcase year of discovery</a>
-          <p>Michigan CSE</p>
-        </div>
-      </li>
-      <li>
-        <time datetime="2024">2024</time>
-        <div>
-          <a href="https://cse.engin.umich.edu/stories/explore-cs-research-program-highlights-student-research-in-annual-showcase">Explore CS Research program highlights student research in annual showcase</a>
-          <p>Michigan CSE</p>
-        </div>
-      </li>
-      <li>
-        <time datetime="2023">2023</time>
-        <div>
-          <a href="https://cse.engin.umich.edu/stories/explore-cs-research-year-long-effort-concludes-with-poster-session">Explore CS Research: year-long effort concludes with poster session</a>
-          <p>Michigan CSE</p>
-        </div>
-      </li>
-      <li>
-        <time datetime="2021-08">August 2021</time>
-        <div>
-          <a href="https://ai.engin.umich.edu/2021/08/24/explore-computer-science-research-explorecsr-program/">Explore Computer Science Research (ExploreCSR) program</a>
-          <p>Michigan AI &mdash; a participant's personal account of the program.</p>
-        </div>
-      </li>
-    </ul>
+    <dl class="facts">
+      <div class="fact">
+        <dt>Students mentored</dt>
+        <dd><span class="ph-value">70+</span><small>since the program began</small></dd>
+      </div>
+      <div class="fact">
+        <dt>Research mentors</dt>
+        <dd><span class="ph-value">30+</span><small>faculty, PhD students, and research staff</small></dd>
+      </div>
+      <div class="fact">
+        <dt>Projects completed</dt>
+        <dd><span class="ph-value">All students</span><small>presented at the annual poster session</small></dd>
+      </div>
+    </dl>
   </div>
 </section>
 
@@ -251,7 +220,7 @@ layout_style: landing
           <h2>Thinking about research?</h2>
           <p>See what the program involves, who it's for, and how to apply.</p>
         </div>
-        <a href="{{ '/prospective-students/' | relative_url }}" class="btn btn--primary">For students</a>
+        <a href="{{ '/prospective-students/' | relative_url }}" class="btn btn--primary">For prospective students</a>
       </div>
 
       <div class="cta cta--alt">
@@ -259,8 +228,10 @@ layout_style: landing
           <h2>Want to mentor?</h2>
           <p>Work with a motivated undergraduate on a project you care about.</p>
         </div>
-        <a href="{{ '/mentors/' | relative_url }}" class="btn btn--primary">For mentors</a>
+        <a href="{{ '/mentors/' | relative_url }}" class="btn btn--primary">For prospective mentors</a>
       </div>
     </div>
   </div>
 </section>
+
+<script src="{{ '/assets/js/carousel.js' | relative_url }}" defer></script>

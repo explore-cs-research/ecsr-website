@@ -11,13 +11,16 @@ ecsr-website/
 │   ├── prospective-students.md
 │   ├── current-students.md
 │   ├── mentors.md
+│   ├── news.md
 │   └── contact.md
 ├── _layouts/
 │   └── default.html          # Shared page template (header, nav, footer)
 ├── _data/
-│   └── nav.yml               # Navigation link definitions
+│   ├── nav.yml               # Navigation link definitions
+│   └── news.yml              # News & media items (news bar + /news/)
 ├── assets/
 │   ├── css/style.css          # Site styling
+│   ├── js/carousel.js         # Homepage news bar
 │   └── images/                # Photos and images
 ├── _config.yml                # Jekyll configuration
 └── Gemfile                    # Ruby dependencies
@@ -27,10 +30,11 @@ ecsr-website/
 
 | Page | Purpose |
 | --- | --- |
-| **Home** | Highlights only — photo gallery, impact numbers, student achievements, quotes from students and mentors, news. No program mechanics. |
+| **Home** | Highlights only — photo gallery, impact numbers, student achievements, quotes from students and mentors, and a news bar under the nav. No program mechanics. |
 | **Prospective Students** | Why participate and how to participate: program rationale, what you'll do, who should apply, student quotes, application timeline. |
 | **Current Students** | Resources for enrolled students — key dates, poster guides, seminars, advisor-meeting tips. |
 | **Mentors** | Recruiting mentors — why mentor, mentor quotes, what's involved, how to sign up. |
+| **News** | The full news and media list, newest first. |
 | **Contact** | Program email and the organizing team. |
 
 ## Replacing placeholders
@@ -47,7 +51,13 @@ The homepage and Mentors page ship with obvious placeholders so nothing fake goe
 <img src="{{ '/assets/images/poster-session.jpg' | relative_url }}" alt="Students at the 2026 poster session">
 ```
 
-Drop the image file into `assets/images/` first. Sizing and cropping are handled by CSS. For the round mentor photos, swap `<div class="ph ph--avatar">Photo</div>` the same way.
+Drop the image file into `assets/images/` first — note that the `<img>` replaces the placeholder `<div>` rather than going inside it. Sizing and cropping are handled by CSS. For the round mentor photos, swap `<div class="ph ph--avatar">Photo</div>` the same way.
+
+Photos straight off a phone are 3–4 MB each, which is far too heavy for a web page. Shrink them first — this resizes to 1600px on the long edge and lands around 400 KB:
+
+```bash
+sips -Z 1600 -s format jpeg -s formatOptions 68 IMG_1234.jpeg --out assets/images/poster-session.jpg
+```
 
 **2. Numbers** (`index.md`, "By the numbers") — replace the digits and delete the wrapper:
 
@@ -65,13 +75,10 @@ Then delete the `<p class="ph-note">…</p>` line below the block.
 
 | Location | What's needed |
 | --- | --- |
-| `index.md` — gallery | 6 photos |
 | `index.md` — "By the numbers" | 4 real figures (or delete the section) |
-| `index.md` — mentor quotes | 2 mentor quotes (the 2 student quotes are real) |
-| `mentors.md` — "What mentors say" | 3 mentor quotes |
-| `mentors.md` — "Mentor spotlights" | 3 mentors, with photos |
+| `mentors.md` — "Mentor spotlights" | 3 mentors with photos — the section is commented out until then |
 
-Everything else — student highlights, alumni, news and media, student quotes — is real content.
+Everything else — the gallery photos, student highlights, alumni, news and media, and the student and mentor quotes — is real content.
 
 ### Adding to the real lists
 
@@ -79,7 +86,20 @@ Everything else — student highlights, alumni, news and media, student quotes �
 
 **Alumni** (`index.md`, `.alumni`) — copy an `<li>` with `.alumni-name` and `.alumni-role`.
 
-**News & media** (`index.md`, `.news`) — copy an `<li>`. Keep the list newest-first; `<time datetime="2024">` accepts a year, a `YYYY-MM`, or a full date.
+**News & media** (`_data/news.yml`) — add an entry at the top of the file. Nothing else needs to change: the five newest items feed the news bar on the homepage, and the full list renders on the News page.
+
+```yaml
+- date: April 2026            # the label readers see
+  datetime: 2026-04           # a year, YYYY-MM, or a full date
+  title: Headline goes here
+  url: https://example.com/story    # or an internal path like /prospective-students/
+  source: Michigan CSE        # optional
+  summary: One or two sentences.    # optional
+```
+
+Keep the list newest-first — the order in the file is the order on the page.
+
+The news bar is the thin strip directly under the navigation on the homepage. It shows one headline at a time, advances every 7 seconds, and pauses on hover or keyboard focus; the arrows step through by hand. It respects "reduce motion" system settings, and without JavaScript it degrades to a swipeable strip. The markup lives at the top of `index.md` and the behavior in `assets/js/carousel.js` — change `limit: 5` in `index.md` to show more or fewer headlines. To put the bar on every page instead of just the homepage, move that markup block into `_layouts/default.html`, just after the `</header>` tag, and add the `<script>` tag from the bottom of `index.md` alongside it.
 
 ## Editing pages
 
@@ -175,16 +195,22 @@ Content goes here.
 
 **Person card grid** — see `pages/contact.md` for a full example (`.people` + `.person-card`).
 
-**Photo gallery** — add `gallery-item--wide` to any figure to make it span two columns:
+**Photo gallery** — three photos across (two on tablets and phones). Add `gallery-item--wide` to one figure and it becomes a full-width lead photo above the rest, cropped to a wide banner shape:
 
 ```html
 <div class="gallery">
+  <figure class="gallery-item gallery-item--wide">
+    <img src="{{ '/assets/images/lead-photo.jpg' | relative_url }}" alt="Describe the photo" loading="lazy">
+    <figcaption>Caption text</figcaption>
+  </figure>
   <figure class="gallery-item">
-    <img src="{{ '/assets/images/photo.jpg' | relative_url }}" alt="Describe the photo">
+    <img src="{{ '/assets/images/photo.jpg' | relative_url }}" alt="Describe the photo" loading="lazy">
     <figcaption>Caption text</figcaption>
   </figure>
 </div>
 ```
+
+Photos are cropped to fit their tile, so the subject should be near the middle of the frame. Groups of three (plus the lead photo) fill the rows evenly.
 
 **Quote cards** — work on both light pages and blue bands:
 

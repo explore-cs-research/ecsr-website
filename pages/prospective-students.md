@@ -40,7 +40,7 @@ Most students arrive with no research background at all. That's the point — EC
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
     </div>
     <h3>Research with a mentor</h3>
-    <p>Work on a project defined jointly by you and your mentor, alongside their research group, across the full academic year.</p>
+    <p>Work on a project defined jointly by you and your mentor, alongside their research group, across the full academic year. (6-10 hours per week dedication expected)</p>
   </article>
 
   <article class="card">
@@ -84,7 +84,7 @@ Most students arrive with no research background at all. That's the point — EC
   </article>
 </div>
 
-<details markdown="1">
+<!-- <details markdown="1">
 <summary>Full details of each activity</summary>
 
 Students enrolled in this program will undertake multiple activities:
@@ -98,7 +98,7 @@ Students enrolled in this program will undertake multiple activities:
 - **Attend a research seminar and meet with a role model.** Students participating in the program will be encouraged to attend at least one research seminar, either a seminar held under the "Women in Computing" seminar series, or any other CSE seminar.
 
 - **Participate in the final project presentations with a networking event.** Towards the end of the Winter semester, we will organize final project presentations where all the students in the program will have a chance to talk about their research experience. This session will be followed by a networking event with computer science researchers. The participants in our program will have an opportunity to gather feedback and learn more about careers in research, and ask questions.
-</details>
+</details> -->
 
 ## Who should apply
 

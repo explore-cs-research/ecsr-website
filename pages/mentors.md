@@ -15,26 +15,24 @@ Students commit 6–10 hours per week across the academic year, so a mentee has 
 
 ## What mentors say
 
-<!-- PLACEHOLDER — replace all three quotes below with real mentor quotes.
-     Delete the class "is-placeholder" once a quote is real. -->
 <div class="quotes">
-  <blockquote class="quote is-placeholder">
-    <p>Add a quote from a mentor about what their student accomplished over the year.</p>
-    <footer>Mentor name <span>Title, CSE</span></footer>
+  <blockquote class="quote">
+    <p>I was impressed by the motivation and intelligence of the ECSR student with whom I worked.</p>
+    <footer>ECSR Mentor</footer>
   </blockquote>
 
-  <blockquote class="quote is-placeholder">
-    <p>Add a quote about how manageable the time commitment turned out to be.</p>
-    <footer>Mentor name <span>Title, CSE</span></footer>
+  <blockquote class="quote">
+    <p>[Student] was really remarkable ... better than many graduate students with whom I have worked. I have encouraged her to consider graduate studies.</p>
+    <footer>ECSR Mentor</footer>
   </blockquote>
 
-  <blockquote class="quote is-placeholder">
-    <p>Add a quote from a PhD student mentor about what they got out of mentoring for the first time.</p>
-    <footer>Mentor name <span>PhD Candidate, CSE</span></footer>
+  <blockquote class="quote">
+    <p>(The program is valuable in that it) connect promising young students who are unfamiliar with research or with the topics studied in specific labs to research groups working on interesting projects</p>
+    <footer>ECSR Mentor</footer>
   </blockquote>
 </div>
 
-## What's involved
+<!-- ## What's involved
 
 <div class="cards">
   <article class="card">
@@ -68,12 +66,12 @@ Students commit 6–10 hours per week across the academic year, so a mentee has 
     <h3>Support the final presentation</h3>
     <p>Help your student prepare for the end-of-year poster session, where the whole cohort presents their work.</p>
   </article>
-</div>
+</div> -->
 
-## Mentor spotlights
+<!-- ## Mentor spotlights
 
-<!-- PLACEHOLDER — replace with real mentors and their projects.
-     Swap each <div class="ph ph--avatar"> for an <img> tag. -->
+PLACEHOLDER — replace with real mentors and their projects.
+     Swap each <div class="ph ph--avatar"> for an <img> tag. 
 <div class="people">
 
 <div class="person-card is-placeholder">
@@ -97,7 +95,7 @@ Students commit 6–10 hours per week across the academic year, so a mentee has 
   <p class="person-note">One line about the kind of project they mentor.</p>
 </div>
 
-</div>
+</div> -->
 
 ## How to get involved
 
