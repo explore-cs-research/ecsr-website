@@ -1209,6 +1209,30 @@ hr {
   background: linear-gradient(150deg, #063258 0%, var(--blue) 100%);
 }
 
+/* Apply band — maize surface with dark ink, for the top-of-page apply prompt */
+.cta--apply {
+  background: var(--maize);
+  box-shadow: var(--shadow-md);
+}
+
+.cta--apply p {
+  color: var(--blue);
+  font-weight: 700;
+  max-width: 46rem;
+}
+
+.cta--apply .btn {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff !important;
+}
+
+.cta--apply .btn:hover {
+  background: var(--blue-700);
+  border-color: var(--blue-700);
+  color: #fff !important;
+}
+
 /* --------------------------------------------------------------------------
    Inner page header
    -------------------------------------------------------------------------- */

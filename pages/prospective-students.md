@@ -7,6 +7,13 @@ heading: Prospective Students
 subtitle: What a year in ECSR actually looks like, why students do it, and how to join the next cohort.
 ---
 
+<div class="cta cta--apply">
+  <div class="cta-text">
+    <p>Applications for the 2026&ndash;27 cohort are reviewed on a rolling basis. Apply by September 10, 2026 for priority consideration!</p>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdED9sthOT7PQQV7LjqkTFWYNjnzBbBJNJ4XP7jkZNCMVcl9A/viewform?usp=header" class="btn btn--primary" target="_blank" rel="noopener">Apply now</a>
+</div>
+
 ## Why this program exists
 
 This program aims to expose undergraduate students to computer science research and allow them to experience and objectively evaluate the potential benefits of a research career. The program welcomes undergraduate students from all years and backgrounds, with special encouragement for women and students from underrepresented groups to participate.
